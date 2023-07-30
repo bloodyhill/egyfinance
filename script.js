@@ -21,3 +21,15 @@ $(document).ready(function() {
         $(this).hide();
     });
 });
+
+$(document).ready(function() {
+    $('#choice1').change(function() {
+        var target = $(this).val();
+        if (target) {
+            $(this).closest('.question').hide();
+            $('#' + target).fadeIn(400);
+        }
+    });
+
+    // Other event handlers
+});

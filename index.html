@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Mahmoud Youniss</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>Egypt's Personal Finance Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>Egypt's Personal Finance Guide</h1>
+            <h2>هنا تقدر تشوف بدايل للبنوك التقليدية وتقارن بين البنوك الإلكترونية والمحافظ اللي شغالة في مصر</h2>
+          
+        </header>
+        <main>
+            <div class="question" id="q1">
+                <h3>بدور على؟</h3>
+                <div class="choices">
+                    <button class="choice" data-target="q1-1">تحويل فلوسي من أبورك لمصر بالدولار</button>
+                    <!-- Other choices -->
+                </div>
+            </div>
+            <!-- Other questions -->
+            <div class="question" id="q1-1" style="display: none;">
+                <h3>معاك باسبور؟</h3>
+                <div class="choices">
+                    <button class="choice" data-answer="دوكاسكوبي">نعم</button>
+                    <button class="choice" data-answer="بايونير">لأ</button>
+                </div>
+            </div>
+            <!-- Other questions -->
+        </main>
+        <div class="answer" style="display: none;">
+            <h3>افضل حساب ليك هو <span id="answer-text"></span></h3>
+            <a id="start-over" style="display: none;">🔁 Start Over</a>
+        </div>
+        <p><a href="https://personal.egy.finance" target="_blank" id="bank-link">اضغط هنا عشان تشوف البنوك الإلكترونية وتقارن بينها</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -89,3 +89,20 @@ header {
     text-decoration: none;
     font-family: 'Tajawal', sans-serif;
 }
+
+.question {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    width: 100%;  /* Adjust as per requirement */
+    height: 200px; /* Adjust as per requirement */
+    overflow: auto; /* To add scrollbar if content is more */
+}
+
+#bank-link {
+    font-size: 1.5em;  /* Adjust as per requirement */
+    color: #007bff;
+    text-decoration: none;
+    font-family: 'Tajawal', sans-serif;
+}

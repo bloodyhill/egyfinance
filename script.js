@@ -28,17 +28,8 @@ $(document).ready(function() {
     $('#start-over').click(function() {
         $('.question').hide();
         $('#q1').show();
+        $('#choice1').val('');  // Reset dropdown selection
         $('.answer').hide();
         $(this).hide();
     });
 });
-<div class="question" id="q1">
-    <h3>💰 بدور على؟</h3>
-    <div class="choices">
-        <select id="choice1" class="choice-dropdown">
-            <option value="">اختر الخيار الخاص بك...</option>
-            <option value="q1-1">تحويل فلوسي من أبورك لمصر بالدولار 💵</option>
-            <!-- Other options -->
-        </select>
-    </div>
-</div>

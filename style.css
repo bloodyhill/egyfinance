@@ -10,8 +10,8 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgb(0, 139, 139);  
-    border-radius: 10px;
+    background-color: #27374D;  
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
 }
 
@@ -27,6 +27,7 @@ header {
     background-color: #007bff;
     color: white;
     border: none;
+    font-family: 'Cairo', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -39,12 +40,13 @@ header {
 .choice-dropdown {
     width: 100%;
     padding: 10px;
-    font-size: 1em;
+    font-size: 1.1em;
     color: #000;
     border-radius: 5px;
     border: 1px solid #007bff;
     margin-bottom: 20px;
-    transition: border-color 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+    transition: border-color 0.1s ease;
 }
 
 .choice-dropdown:focus {
@@ -53,24 +55,24 @@ header {
 
 .answer {
     text-align: center;
-    font-size: 1.5em;
-    color: #007bff;
+    font-size: 1.3em;
+    color: #DAFFFB;
 }
 
 #start-over {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #176B87;
     color: white;
     border: none;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
 #start-over:hover {
-    background-color: #0056b3;
+    background-color: #176B87;
 }
 
 .question {
@@ -132,4 +134,3 @@ body {
 
     /* Add other styles as needed... */
 }
-

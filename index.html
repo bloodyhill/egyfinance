@@ -33,8 +33,12 @@ f=false,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_setting
                 <h3>💰 بدور على؟</h3>
                 <div class="choices">
                     <select id="choice1" class="choice-dropdown">
-                        <option value="">اختر الخيار الخاص بك...</option>
-                        <option value="q1-1">تحويل فلوسي من أبورك لمصر بالدولار 💵</option>
+                        <option value="">اختار من القايمة...</option>
+                        <option value="q1-1">بديل وايز </option>
+                        <option value="q1-2">فيزا افتراضية للشراء بالدولار </option>
+                        <option value="q1-3">تحويل من وايز لمصر </option>
+                        <option value="q1-4">تحويل من وايز لبنك خارج مصر </option>
+                        <option value="q1-5">تحويل فلوسي من أبورك لمصر بالدولار </option>
                         <!-- Other options -->
                     </select>
                 </div>
@@ -43,10 +47,51 @@ f=false,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_setting
             <div class="question" id="q1-1" style="display: none;">
                 <h3>معاك باسبور؟</h3>
                 <div class="choices">
+                    <button class="choice" data-answer=" تحويل دولاري الى بنك QNB أو CIB">اكتر من 21</button>
+                    <button class="choice" data-answer=" Paypalلفيزا إيزي باي"أقل من 21أ</button>
+                </div>
+                <div class="question" id="q1-1-2" style="display: none;">
+                <h3>سنك كام؟</h3>
+                <div class="choices">
                     <button class="choice" data-answer="دوكاسكوبي">نعم</button>
                     <button class="choice" data-answer="بايونير">لأ</button>
                 </div>
             </div>
+              <div class="question" id="q1-2" style="display: none;">
+                <h3>معاك باسبور؟</h3>
+                <div class="choices">
+                    <button class="choice" data-answer="Dukascopy أو Advcash">نعم</button>
+                    <button class="choice" data-answer="Advcash">لأ</button>
+                </div>
+            </div>
+             </div>
+              <div class="question" id="q1-3" style="display: none;">
+                <h3>معاك باسبور؟</h3>
+                <div class="choices">
+                    <button class="choice" data-answer="Pyypl">نعم</button>
+                    <button class="choice" data-answer="(أدفكاش - 90 دولار)">لأ</button>
+                </div>
+            </div>
+                </div>
+             </div>
+              <div class="question" id="q1-4" style="display: none;">
+                <h3>معاك باسبور؟</h3>
+                <div class="choices">
+                    <button class="choice" data-answer=" Dukascopy بعدين تحولهم بالدولار لبنك مصري أو كريبتو">نعم</button>
+                    <button class="choice" data-answer=" (بنك الاهلي القطري - تحويل مباشر باليورو عن طريق IBAN الحساب الجاري بالمصري)
+">لأ</button>
+                </div>
+            </div>
+                </div>
+             </div>
+              <div class="question" id="q1-5" style="display: none;">
+                <h3>معاك باسبور؟</h3>
+                <div class="choices">
+                    <button class="choice" data-answer="Dukascopy">نعم</button>
+                    <button class="choice" data-answer="Advcash">لأ</button>
+                </div>
+           </div>
+    
             <!-- Other questions -->
         </main>
         <div class="answer" style="display: none;">

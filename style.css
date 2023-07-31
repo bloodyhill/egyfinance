@@ -55,13 +55,13 @@ header {
 
 .answer {
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #DAFFFB;
 }
 
 #start-over {
     display: inline-block;
-    margin-top: 10px;
+    margin: 10px;
     padding: 10px;
     background-color: #176B87;
     color: white;

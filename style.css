@@ -92,8 +92,29 @@ body {
     font-size: 18px;
 }
 
-/* existing styles... */
+    .content {
+        width: 90%;
+        padding: 10px;
+    }
+}
 
+/* Small phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .content {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .choices .choice {
+        padding: 5px;
+    }
+
+    /* Other styles... */
+}
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;

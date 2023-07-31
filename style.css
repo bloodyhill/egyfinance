@@ -2,19 +2,17 @@ body {
     font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    background-image: url('https://your-image-url');  /* Replace with your own background image url */
-    background-size: cover;
-    background-position: center;
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 .content {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.85);  /* Semi-transparent white */
+    background-color: rgba(0, 0, 0, 0.85);  
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* A subtle shadow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
 }
 
 header {
@@ -30,14 +28,12 @@ header {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    transform: scale(1);  /* Initial scale */
-    transition: transform 0.3s ease;  /* Animate the transform property */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .choices .choice:hover {
     background-color: #0056b3;
-    transform: scale(1.1);  /* Scale up when hovered over */
+    transform: scale(1.05);
 }
 
 .choice-dropdown {
@@ -55,12 +51,12 @@ header {
     border-color: #0056b3;
 }
 
-
 .answer {
     text-align: center;
     font-size: 1.5em;
     color: #007bff;
 }
+
 #start-over {
     display: inline-block;
     margin-top: 20px;
@@ -76,32 +72,16 @@ header {
 #start-over:hover {
     background-color: #0056b3;
 }
-.question {
-    padding: 50px;
-    margin-bottom: 30px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-}
-
-#bank-link {
-    font-size: 1.2em;
-    color: #007bff;
-    text-decoration: none;
-    font-family: 'Tajawal', sans-serif;
-}
 
 .question {
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #f5f5f5;
+    background-color: #444;
     border-radius: 5px;
-    width: 100%;  /* Adjust as per requirement */
-    height: 200px; /* Adjust as per requirement */
-    overflow: auto; /* To add scrollbar if content is more */
 }
 
 #bank-link {
-    font-size: 1.5em;  /* Adjust as per requirement */
+    font-size: 1.5em;
     color: #007bff;
     text-decoration: none;
     font-family: 'Tajawal', sans-serif;

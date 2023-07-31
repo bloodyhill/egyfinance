@@ -86,3 +86,29 @@ header {
     text-decoration: none;
     font-family: 'Tajawal', sans-serif;
 }
+
+body {
+    /* existing styles... */
+    font-size: 18px;
+}
+
+/* existing styles... */
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .content {
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .question {
+        font-size: 14px;
+    }
+
+    /* Add other styles as needed... */
+}
+

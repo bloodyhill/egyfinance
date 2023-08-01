@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-color: #333;
     color: #f0f0f0;
-    background-image: linear-gradient(to top, #222831, #262c35, #2a3039, #2f343d, #333841, #38404d, #3c4859, #3f5165, #3f607e, #3b7097, #2e81b0, #0092ca);
+    background-image: linear-gradient(to right top, #222831, #262c35, #2a3039, #2f343d, #333841, #38404d, #3c4859, #3f5165, #3f607e, #3b7097, #2e81b0, #0092ca);
 }
 
 .content {

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Finance Wiki | دليل البنوك الإلكترونية في مصر</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #008374;
+            --secondary-color: #f5f5f5;
+            --accent-color: #ffd166;
+            --text-color: #333;
+            --light-text: #777;
+            --border-color: #e0e0e0;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --hover-color: #006d5f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        
+        #page-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #content-wrap {
+            flex: 1;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+        
+        .tab {
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab:hover, .tab.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .question {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .question h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .choices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .choice {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .choice:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .choice-dropdown {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: white;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 1rem center;
+            background-size: 16px;
+        }
+        
+        .answer {
+            background-color: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        #answer-text {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        #start-over {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #start-over:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .card-content {
+            font-size: 0.95rem;
+            color: var(--light-text);
+        }
+        
+        .section {
+            margin-top: 3rem;
+        }
+        
+        .section:first-child {
+            margin-top: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            text-align: right;
+        }
+        
+        .comparison-table th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .feature-list {
+            margin-top: 1rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-icon {
+            color: var(--primary-color);
+            margin-left: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+                margin: 1.5rem 1rem;
+            }
+            
+            .choices {
+                flex-direction: column;
+            }
+            
+            .choice, .choice-dropdown {
+                width: 100%;
+            }
+            
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <header>
+                <div class="header-container">
+                    <h1>Egypt Finance Wiki</h1>
+                    <p class="subtitle">دليل شامل للبنوك الإلكترونية والحلول المالية للمستقلين في مصر</p>
+                    
+                    <div class="tabs">
+                        <div class="tab active" data-tab="questionnaire">استشارة سريعة</div>
+                        <div class="tab" data-tab="banks">البنوك الإلكترونية</div>
+                        <div class="tab" data-tab="wallets">المحافظ الإلكترونية</div>
+                        <div class="tab" data-tab="solutions">حلول للمستقلين</div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content">
+                <!-- Questionnaire Tab -->
+                <div id="questionnaire" class="tab-content active">
+                    <div class="section">
+                        <h2>استشارة مالية سريعة</h2>
+                        <p>اختر من القائمة أدناه لمعرفة أفضل حل مالي يناسب احتياجاتك</p>
+                    
+                        <div class="questionnaire-container">
+                            <div class="question" id="q1">
+                                <h3>💰 بتدور على؟</h3>
+                                <div class="choices">
+                                    <select id="choice1" class="choice-dropdown">
+                                        <option value="">اختار من القايمة...</option>
+                                        <option value="q1-1">بديل وايز</option>
+                                        <option value="q1-2">فيزا افتراضية للشراء بالدولار</option>
+                                        <option value="q1-3">تحويل من وايز لمصر</option>
+                                        <option value="q1-4">تحويل من وايز لبنك خارج مصر</option>
+                                        <option value="q1-5">تحويل فلوسي من أبورك لمصر بالدولار</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q1-1" style="display: none;">
+                                <h3>معاك باسبور؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="Dukascopy أو Payoneer">نعم</button>
+                                    <button class="choice" data-target="q2">لأ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q2" style="display: none;">
+                                <h3>سنك كام؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="تحويل دولاري الى بنك QNB أو CIB">اكتر من 21</button>
+                                    <button class="choice" data-answer="التحويل من Paypal لفيزا إيزي باي">اقل من 21</button>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q1-2" style="display: none;">
+                                <h3>معاك باسبور؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="Dukascopy أو Advcash">نعم</button>
+                                    <button class="choice" data-answer="Advcash">لأ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q1-3" style="display: none;">
+                                <h3>معاك باسبور؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="Pyypl">نعم</button>
+                                    <button class="choice" data-answer="أدفكاش - بنك الكتروني وعندهم بطاقة للمشتريات سعرها 90 دولار">لأ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q1-4" style="display: none;">
+                                <h3>معاك باسبور؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="Dukascopy بعدين تحولهم بالدولار لبنك مصري أو كريبتو">نعم</button>
+                                    <button class="choice" data-answer="بنك الاهلي القطري - تحويل مباشر باليورو عن طريق IBAN الحساب الجاري بالمصري">لأ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="question" id="q1-5" style="display: none;">
+                                <h3>معاك باسبور؟</h3>
+                                <div class="choices">
+                                    <button class="choice" data-answer="Dukascopy">نعم</button>
+                                    <button class="choice" data-answer="Advcash">لأ</button>
+                                </div>
+                            </div>
+                            
+                            <div class="answer" style="display: none;">
+                                <h3>افضل حل ليك هو <span id="answer-text"></span></h3>
+                                <a id="start-over">🔁 ارجع للبداية</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Banks Tab -->
+                <div id="banks" class="tab-content">
+                    <div class="section">
+                        <h2>البنوك الإلكترونية</h2>
+                        <p>مقارنة بين أشهر البنوك الإلكترونية المتاحة للمصريين</p>
+                        
+                        <div class="comparison-table-container">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>البنك</th>
+                                        <th>الرسوم السنوية</th>
+                                        <th>دعم الدولار</th>
+                                        <th>بطاقة فيزا</th>
+                                        <th>متطلبات فتح الحساب</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wise</td>
+                                        <td>مجاني</td>
+                                        <td>نعم</td>
+                                        <td>نعم (فعلية وافتراضية)</td>
+                                        <td>جواز سفر</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payoneer</td>
+                                        <td>29.95$ سنوياً</td>
+                                        <td>نعم</td>
+                                        <td>نعم (فعلية)</td>
+                                        <td>جواز سفر</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Advcash</td>
+                                        <td>مجاني</td>
+                                        <td>نعم</td>
+                                        <td>نعم (افتراضية)</td>
+                                        <td>بطاقة هوية</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pyypl</td>
+                                        <td>مجاني</td>
+                                        <td>نعم</td>
+                                        <td>نعم (افتراضية)</td>
+                                        <td>جواز سفر</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dukascopy</td>
+                                        <td>مجاني</td>
+                                        <td>نعم</td>
+                                        <td>نعم (فعلية وافتراضية)</td>
+                                        <td>جواز سفر</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="card-title">Wise</div>
+                                <div class="card-content">
+                                    <p>بنك إلكتروني عالمي يتيح فتح حسابات متعددة العملات وتحويل الأموال بين الدول بأسعار صرف منخفضة.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>أسعار صرف منخفضة للتحويلات الدولية</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>بطاقة فيزا فعلية وافتراضية</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>يتطلب جواز سفر</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-title">Payoneer</div>
+                                <div class="card-content">
+                                    <p>مشهور بين المستقلين والعاملين عبر الإنترنت، يتيح استلام المدفوعات من المنصات العالمية.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>متوافق مع معظم منصات العمل الحر</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>تحويل مباشر للبنوك المصرية</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>رسوم سنوية للبطاقة</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-title">Advcash</div>
+                                <div class="card-content">
+                                    <p>بنك إلكتروني يوفر بطاقات افتراضية للمشتريات عبر الإنترنت وتحويلات دولية.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>لا يشترط وجود جواز سفر</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>بطاقات افتراضية للدفع الإلكتروني</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>رسوم تحويل مرتفعة نسبياً</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wallets Tab -->
+                <div id="wallets" class="tab-content">
+                    <div class="section">
+                        <h2>المحافظ الإلكترونية</h2>
+                        <p>مقارنة بين المحافظ الإلكترونية المتاحة في مصر</p>
+                        
+                        <div class="comparison-table-container">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>المحفظة</th>
+                                        <th>الرسوم</th>
+                                        <th>السحب للبنك المصري</th>
+                                        <th>الحد الأقصى للتحويل</th>
+                                        <th>المميزات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>فودافون كاش</td>
+                                        <td>متفاوتة</td>
+                                        <td>نعم</td>
+                                        <td>50,000 ج.م شهرياً</td>
+                                        <td>انتشار واسع، سهولة الاستخدام</td>
+                                    </tr>
+                                    <tr>
+                                        <td>إيزي باي</td>
+                                        <td>متفاوتة</td>
+                                        <td>نعم</td>
+                                        <td>50,000 ج.م شهرياً</td>
+                                        <td>بطاقة فيزا متصلة، دعم المدفوعات الدولية</td>
+                                    </tr>
+                                    <tr>
+                                        <td>بنك مصر فون كاش</td>
+                                        <td>متفاوتة</td>
+                                        <td>نعم</td>
+                                        <td>50,000 ج.م شهرياً</td>
+                                        <td>تكامل مع خدمات بنك مصر</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="card-title">فودافون كاش</div>
+                                <div class="card-content">
+                                    <p>محفظة إلكترونية منتشرة في مصر تتيح تحويل الأموال ودفع الفواتير وشراء الخدمات.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>انتشار نقاط الخدمة في كل مكان</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>سهولة السحب والإيداع</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>لا تدعم العملات الأجنبية</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-title">إيزي باي</div>
+                                <div class="card-content">
+                                    <p>محفظة إلكترونية تقدم بطاقة فيزا افتراضية للمشتريات الإلكترونية وتدعم استلام المدفوعات من باي بال.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>بطاقة فيزا للمشتريات عبر الإنترنت</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>تكامل مع باي بال</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>رسوم على بعض المعاملات</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-title">بنك مصر فون كاش</div>
+                                <div class="card-content">
+                                    <p>محفظة إلكترونية مقدمة من بنك مصر تتيح إجراء المعاملات المالية وتحويل الأموال.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>تكامل مع خدمات بنك مصر</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">✅</span>
+                                            <span>إمكانية التحويل للحساب البنكي مباشرة</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">❌</span>
+                                            <span>محدودية الخدمات الدولية</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solutions Tab -->
+                <div id="solutions" class="tab-content">
+                    <div class="section">
+                        <h2>حلول للمستقلين</h2>
+                        <p>أفضل الطرق للمستقلين لاستلام مدفوعاتهم من الخارج</p>
+                        
+                        <div class="cards-container">
+                            <div class="card">
+                                <div class="card-title">استلام المدفوعات من منصات العمل الحر</div>
+                                <div class="card-content">
+                                    <p>أفضل الطرق لاستلام المدفوعات من منصات مثل Upwork و Fiverr و Freelancer.</p>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">📌</span>
+                                            <span>Payoneer: مدعوم من معظم المنصات</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">📌</span>
+                                            <span>ربط Paypal بمحفظة إيزي باي</span>

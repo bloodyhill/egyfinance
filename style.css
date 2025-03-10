@@ -1,149 +1,80 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-}
-
-body {
-    background: #121212;
-    color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-body {
-    font-family: 'Cairo', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-    color: #f0f0f0;
-    background-image: linear-gradient(to right top, #222831, #262c35, #2a3039, #2f343d, #333841, #38404d, #3c4859, #3f5165, #3f607e, #3b7097, #2e81b0, #0092ca);
-}
-
-.content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #27374D;  
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.choices .choice {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    font-family: 'Cairo', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.choices .choice:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.choice-dropdown {
-    width: 100%;
-    padding: 10px;
-    font-size: 1.1em;
-    color: #000;
-    border-radius: 5px;
-    border: 1px solid #007bff;
-    margin-bottom: 20px;
-    font-family: 'Cairo', sans-serif;
-    transition: border-color 0.1s ease;
-}
-
-.choice-dropdown:focus {
-    border-color: #0056b3;
-}
-
-.answer {
-    text-align: center;
-    font-size: 1.2em;
-    color: #DAFFFB;
-}
-
-#start-over {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: #176B87;
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-#start-over:hover {
-    background-color: #176B87;
-}
-
-.question {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #444;
-    border-radius: 5px;
-}
-
-#bank-link {
-    font-size: 1.5em;
-    color: #007bff;
-    text-decoration: none;
-    font-family: 'Tajawal', sans-serif;
-}
-
-body {
-    /* existing styles... */
-    font-size: 18px;
-}
-
-    .content {
-        width: 90%;
-        padding: 25px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
+/* Expand the existing media query */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
     }
     
     .content {
+        padding: 1.5rem;
+        margin: 1.5rem 1rem;
+    }
+    
+    .choices {
+        flex-direction: column;
+    }
+    
+    .choice, .choice-dropdown {
         width: 100%;
-        padding: 5px;
     }
-
-    .choices .choice {
-        padding: 5px;
+    
+    .tabs {
+        flex-wrap: wrap;
     }
-
-    /* Other styles... */
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Make tab buttons more touch-friendly */
+    .tab {
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Ensure buttons have adequate touch target size */
+    .btn, .choice, #start-over {
+        padding: 0.85rem 1.5rem;
+        min-height: 44px; /* Minimum touch target size */
+    }
 }
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
+
+/* Add an additional breakpoint for very small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
     }
     
     .content {
-        width: 90%;
-        margin: 20px auto;
-        padding: 10px;
+        padding: 1rem;
+        margin: 1rem 0.5rem;
     }
-
-    .question {
-        font-size: 14px;
+    
+    /* Stack the tabs vertically on very small screens */
+    .tab {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
+    
+    /* Reduce padding in table cells */
+    .comparison-table th, .comparison-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
 
+/* Fix for table responsiveness */
+.comparison-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin-bottom: 1.5rem;
+}
+
+/* Make the comparison table properly responsive */
+.comparison-table {
+    min-width: 650px; /* Ensure table has minimum width */
+}

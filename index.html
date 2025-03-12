@@ -806,37 +806,48 @@ footer a:hover {
                                     </div>
 <script src="script.js"></script>
 
-                                    <!-- Replace the current table code with this structure -->
-<div class="comparison-table-container">
-    <table class="comparison-table">
-        <!-- Table content remains the same -->
-    </table>
-    <!-- Add this before the closing footer tag -->
-<div class="resources-section">
-    <div class="content">
-        <div class="section">
-            <h2>Additional Resources</h2>
+</div>
+<!-- This is where the bottom section should be placed - AFTER the content div closes but BEFORE the footer -->
+
+            </div> <!-- This closing div ends the #content-wrap -->
             
-            <div class="resources-container">
-                <div class="resource-card">
-                    <div class="resource-icon">📚</div>
-                    <div class="resource-title">Wiki</div>
-                    <a href="https://wiki.egy.finance/" class="btn" target="_blank">Visit Wiki</a>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">💬</div>
-                    <div class="resource-title">Reddit</div>
-                    <a href="https://www.reddit.com/r/PersonalFinanceEgypt/" class="btn" target="_blank">Join Community</a>
+            <!-- Insert the resources section HERE - between content-wrap and footer -->
+            <div class="resources-section">
+                <div class="content">
+                    <div class="section">
+                        <h2>Additional Resources</h2>
+                        
+                        <div class="resources-container">
+                            <div class="resource-card">
+                                <div class="resource-icon">📚</div>
+                                <div class="resource-title">Wiki</div>
+                                <a href="https://wiki.egy.finance/" class="btn" target="_blank">Visit Wiki</a>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">💬</div>
+                                <div class="resource-title">Reddit</div>
+                                <a href="https://www.reddit.com/r/PersonalFinanceEgypt/" class="btn" target="_blank">Join Community</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            
+            <!-- Replace the existing footer with this -->
+            <footer>
+                <div class="footer-container">
+                    <p>Created by <a href="https://www.reddit.com/user/fuearthian/" target="_blank">u/fuearthian</a> | Want to contribute? <a href="https://www.reddit.com/user/fuearthian/" target="_blank">Get in touch</a></p>
+                </div>
+            </footer>
+        </div> <!-- This closing div ends the #page-container -->
 
-<footer>
-    <div class="footer-container">
-        <p>Created by <a href="https://www.reddit.com/user/fuearthian/" target="_blank">u/fuearthian</a> | Want to contribute? <a href="https://www.reddit.com/user/fuearthian/" target="_blank">Get in touch</a></p>
-    </div>
-</footer>
-</div>
+                        <div id="page-container">
+  <div id="content-wrap">
+    <!-- All your content tabs are here -->
+  </div> <!-- End of content-wrap -->
+  
+  <footer>
+    <!-- Your existing footer is here -->
+  </footer>
+</div> <!-- End of page-container -->

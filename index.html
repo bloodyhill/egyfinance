@@ -814,10 +814,12 @@ footer a:hover {
 
 </div>
 <!-- This is where the bottom section should be placed - AFTER the content div closes but BEFORE the footer -->
-
-            </div> <!-- This closing div ends the #content-wrap -->
+                        </div>
+                    </div>
+                </div> <!-- This correctly closes the solutions tab content div that was missing -->
+            </div> <!-- This closes the content div -->
             
-            <!-- Insert the resources section HERE - between content-wrap and footer -->
+            <!-- Resources Section - Now inside content-wrap but before footer -->
             <div class="resources-section">
                 <div class="content">
                     <div class="section">
@@ -839,14 +841,15 @@ footer a:hover {
                     </div>
                 </div>
             </div>
-                            </body>
-            
-            <!-- Replace the existing footer with this -->
-            <footer>
-                <div class="footer-container">
-                    <p>Created by <a href="https://www.reddit.com/user/fuearthian/" target="_blank">u/fuearthian</a> | Want to contribute? <a href="https://www.reddit.com/user/fuearthian/" target="_blank">Get in touch</a></p>
-                </div>
-            </footer>
-        </div> <!-- This closing div ends the #page-container -->
-                        <script src="script.js"></script>
-                        </html>
+        </div> <!-- This closes the content-wrap div -->
+        
+        <footer>
+            <div class="footer-container">
+                <p>Created by <a href="https://www.reddit.com/user/fuearthian/" target="_blank">u/fuearthian</a> | Want to contribute? <a href="https://www.reddit.com/user/fuearthian/" target="_blank">Get in touch</a></p>
+            </div>
+        </footer>
+    </div> <!-- This closes the page-container div -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
